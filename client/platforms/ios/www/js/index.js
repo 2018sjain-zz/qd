@@ -9,19 +9,21 @@ $('.message a').click(function() {
   transition()
 });
 
-$('#createButton').click(function() {
-  function registerUser() {
+$('#registerButton').click(function() {
+   function registerUser() {
     $.ajax({
-      url: 'https://auth.bazooka69.hasura-app.io/signup',
       type: 'POST',
+      url: 'https://auth.bazooka69.hasura-app.io/signup',
       contentType: 'application/json',
       data: {
-        username: $(".register-form #username").text,
-        password: $(".register-form #password").text
+        username: $(".register-form #username").val(),
+        password: $(".register-form #password").val()
       },
       dataType: 'json'
+  }).done(function(data) {
+      console.log(data)
+      transition()
     });
-    transition()
   };
 });
 
