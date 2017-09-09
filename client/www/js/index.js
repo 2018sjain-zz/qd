@@ -29,5 +29,5 @@ $('#registerButton').click(function() {
 
 $('#loginButton').click(function() {
   //Login to account
-  window.location.href = "nearby.html";
+  event.preventDefault();
 });

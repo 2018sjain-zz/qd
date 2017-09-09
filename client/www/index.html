@@ -26,6 +26,23 @@
     <link rel="stylesheet" type="text/css" href="css/app.css">
     <link rel="stylesheet" type="text/css" href="css/index.css">
     <title>Login</title>
+    <script>
+    function onLoad()
+           {
+                document.addEventListener("deviceready", onDeviceReady, true);
+           }
+
+           function onDeviceReady()
+           {
+                // navigator.notification.alert("PhoneGap is working");
+           }
+
+           function callAnothePage()
+           {
+             console.log("headasssssss")
+              window.location = "venue.html";
+           }
+    </script>
   </head>
 
   <body>
@@ -42,7 +59,7 @@
         <form class="login-form">
           <input id="username" type="text" placeholder="Username" />
           <input type="password" placeholder="Password" />
-          <button id="loginButton">login</button>
+          <button onclick="callAnothePage()" id="loginButton">login</button>
           <p class="message">Not registered? <a href="#">Create an account</a></p>
         </form>
       </div>
