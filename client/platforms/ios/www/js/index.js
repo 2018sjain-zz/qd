@@ -1,19 +1,31 @@
 function transition() {
-    $('form').animate({
-        height: "toggle",
-        opacity: "toggle"
-    }, "slow");
+  $('form').animate({
+    height: "toggle",
+    opacity: "toggle"
+  }, "slow");
 }
 
 $('.message a').click(function() {
-    transition()
+  transition()
 });
 
 $('#createButton').click(function() {
-    //Create account
+  function registerUser() {
+    $.ajax({
+      url: 'https://auth.bazooka69.hasura-app.io/signup',
+      type: 'POST',
+      contentType: 'application/json',
+      data: {
+        username: $(".register-form #username").text,
+        password: $(".register-form #password").text
+      },
+      dataType: 'json'
+    });
     transition()
+  };
 });
 
 $('#loginButton').click(function() {
-    //Login to account
+  //Login to account
+  window.location.href = "nearby.html";
 });
