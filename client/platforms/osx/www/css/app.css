@@ -1,7 +1,39 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:300);
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://example.com/MaterialIcons-Regular.eot);
+  /* For IE6-8 */
+  src: local('Material Icons'), local('MaterialIcons-Regular'), url(https://example.com/MaterialIcons-Regular.woff2) format('woff2'), url(https://example.com/MaterialIcons-Regular.woff) format('woff'), url(https://example.com/MaterialIcons-Regular.ttf) format('truetype');
+}
+
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+  /* Support for IE. */
+  font-feature-settings: 'liga';
+}
 
 body {
-  background: #76b852; /* fallback for old browsers */
+  background: #76b852;
+  /* fallback for old browsers */
   background: -webkit-linear-gradient(right, #9B59B6, #8E44AD);
   background: -moz-linear-gradient(right, #9B59B6, #8E44AD);
   background: -o-linear-gradient(right, #9B59B6, #8E44AD);
@@ -11,12 +43,13 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-.form {
+form {
   position: relative;
   max-width: 100%;
   text-align: center;
 }
-.form input {
+
+form input {
   font-family: "Roboto", sans-serif;
   outline: 0;
   background: #f2f2f2;
@@ -27,7 +60,8 @@ body {
   box-sizing: border-box !important;
   font-size: 14px;
 }
-.form button {
+
+form button {
   font-family: "Roboto", sans-serif;
   text-transform: uppercase;
   outline: 0;
@@ -40,4 +74,191 @@ body {
   -webkit-transition: all 0.3 ease;
   transition: all 0.3 ease;
   cursor: pointer;
+}
+
+form button:hover, form button:active, form button:focus {
+  background: #FFFFFF;
+}
+
+.tab-bar {
+  font-family: -apple-system, 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 400;
+  font-size: 17px;
+  display: table;
+  table-layout: fixed;
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  white-space: nowrap;
+  margin: 0;
+  padding: 0;
+  height: 49px;
+  background-color: #fff;
+  border-top: 1px solid #ddd;
+  width: 100%;
+}
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .tab-bar {
+    border-top: none;
+    -webkit-background-size: 100% 1px;
+    background-size: 100% 1px;
+    background-repeat: no-repeat;
+    background-position: top;
+    background-image: -webkit-linear-gradient(270deg, #ddd, #ddd 50%, transparent 50%);
+    background-image: -moz-linear-gradient(270deg, #ddd, #ddd 50%, transparent 50%);
+    background-image: -o-linear-gradient(270deg, #ddd, #ddd 50%, transparent 50%);
+    background-image: linear-gradient(180deg, #ddd, #ddd 50%, transparent 50%);
+  }
+}
+.tab-bar__item {
+  font-family: -apple-system, 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 400;
+  font-size: 17px;
+  position: relative;
+  overflow: hidden;
+  display: table-cell;
+  width: auto;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+}
+.tab-bar__item > input {
+  position: absolute;
+  overflow: hidden;
+  right: 0px;
+  top: 0px;
+  left: 0px;
+  bottom: 0px;
+  padding: 0;
+  border: 0;
+  opacity: 0.001;
+  z-index: 1;
+  vertical-align: top;
+  outline: none;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  -webkit-appearance: none;
+  appearance: none;
+}
+.tab-bar__button {
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  font-family: -apple-system, 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 400;
+  font-size: 17px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  color: inherit;
+  background: transparent;
+  border: none;
+  line-height: normal;
+  cursor: default;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  text-decoration: none;
+  padding: 0;
+  height: 49px;
+  letter-spacing: 0;
+  color: #aaa;
+  text-shadow: 0 1px none;
+  vertical-align: top;
+  background-color: transparent;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  border-top: none;
+  width: 100%;
+  font-weight: 400;
+  line-height: 49px;
+}
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .tab-bar__button {
+    border-top: none;
+  }
+}
+.tab-bar__icon {
+  font-size: 24px;
+  padding: 0;
+  margin: 0;
+  line-height: 26px;
+  display: block;
+  height: 28px;
+}
+.tab-bar__label {
+  font-family: -apple-system, 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 400;
+  font-size: 17px;
+}
+.tab-bar__badge.notification {
+  position: absolute;
+  top: 5px;
+  z-index: 10;
+  font-size: 12px;
+  height: 16px;
+  line-height: 16px;
+  -webkit-border-radius: 8px;
+  border-radius: 8px;
+}
+.tab-bar__icon + .tab-bar__label {
+  font-size: 10px;
+  line-height: 1;
+  margin: 0;
+  font-weight: 400;
+}
+.tab-bar__label:first-child {
+  font-size: 16px;
+  line-height: 49px;
+  margin: 0;
+  padding: 0;
+}
+.tab-bar__button {
+  color: #aaa;
+  font-size: 1.3em;
+}
+:checked + .tab-bar__button {
+  color: #8962ed;
+  background-color: transparent;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  border-top: none;
+}
+.tab-bar__button:disabled {
+  opacity: 0.3;
+  cursor: default;
+  pointer-events: none;
+}
+.tab-bar__button:focus {
+  z-index: 1;
+  border-top: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  outline: 0;
+}
+.tab-bar__content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 49px;
+  z-index: 0;
 }
