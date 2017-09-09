@@ -20,16 +20,16 @@ $('.message a').click(function() {
 $('#registerButton').click(function() {
    function registerUser() {
     $.ajax({
-      type: 'POST',
+      //type: 'POST',
       url: 'https://auth.bazooka69.hasura-app.io/signup',
       contentType: 'application/json',
+      authorization: 'vcd0bp4a8s9lqlcppyiokodg9ber69dx',
       data: {
         username: $(".register-form #username").val(),
         password: $(".register-form #password").val()
       },
       dataType: 'json'
   }).done(function(data) {
-      console.log(data)
       transition()
     });
   };
