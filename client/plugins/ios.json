@@ -7,14 +7,17 @@
         "files": {}
     },
     "installed_plugins": {
-        "cordova-plugin-whitelist": {
+        "cordova-plugin-qrscanner": {
             "PACKAGE_NAME": "io.cordova.hellocordova"
         },
-        "cordova-plugin-qrscanner": {
+        "cordova-plugin-whitelist": {
             "PACKAGE_NAME": "io.cordova.hellocordova"
         }
     },
     "dependent_plugins": {
+        "cordova-plugin-compat": {
+            "PACKAGE_NAME": "io.cordova.hellocordova"
+        },
         "cordova-plugin-swift-support": {
             "PACKAGE_NAME": "io.cordova.hellocordova"
         }

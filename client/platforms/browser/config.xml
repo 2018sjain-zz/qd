@@ -3,9 +3,9 @@
     <feature name="QRScanner">
         <param name="browser-package" value="QRScanner" />
     </feature>
-    <name>HelloCordova</name>
+    <name>Q'd</name>
     <description>
-        A sample Apache Cordova application that responds to the deviceready event.
+        Digitized lines with venue data analytics.
     </description>
     <author email="dev@cordova.apache.org" href="http://cordova.io">
         Apache Cordova Team

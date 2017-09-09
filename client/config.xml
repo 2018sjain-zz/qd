@@ -1,8 +1,8 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="io.cordova.hellocordova" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name>HelloCordova</name>
+    <name>Q'd</name>
     <description>
-        A sample Apache Cordova application that responds to the deviceready event.
+        Digitized lines with venue data analytics.
     </description>
     <author email="dev@cordova.apache.org" href="http://cordova.io">
         Apache Cordova Team
@@ -26,6 +26,6 @@
     <engine name="browser" spec="^4.1.0" />
     <engine name="ios" spec="^4.4.0" />
     <engine name="osx" spec="^4.0.1" />
-    <plugin name="cordova-plugin-whitelist" spec="^1.3.2" />
     <plugin name="cordova-plugin-qrscanner" spec="~2.5.0" />
+    <plugin name="cordova-plugin-whitelist" spec="^1.3.2" />
 </widget>
