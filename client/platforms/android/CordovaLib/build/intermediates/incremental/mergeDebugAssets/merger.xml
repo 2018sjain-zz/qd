@@ -1,2 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<merger version="3"><dataSet config="main"><source path="/Users/Saarthak/Documents/Q&apos;d/client/platforms/android/CordovaLib/assets"/><source path="/Users/Saarthak/Documents/Q&apos;d/client/platforms/android/CordovaLib/build/generated/assets/shaders/debug"/></dataSet><dataSet config="debug"><source path="/Users/Saarthak/Documents/Q&apos;d/client/platforms/android/CordovaLib/src/debug/assets"/></dataSet></merger>
