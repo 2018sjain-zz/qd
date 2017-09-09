@@ -1,3 +1,11 @@
+function onLoad() {
+  document.addEventListener("deviceready", onDeviceReady, true);
+}
+
+function goToVenue(){
+  window.location = "venue.html";
+}
+
 function transition() {
   $('form').animate({
     height: "toggle",

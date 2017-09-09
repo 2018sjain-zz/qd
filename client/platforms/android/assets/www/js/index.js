@@ -1,3 +1,11 @@
+function onLoad() {
+  document.addEventListener("deviceready", onDeviceReady, true);
+}
+
+function goToVenue(){
+  window.location = "venue.html";
+}
+
 function transition() {
   $('form').animate({
     height: "toggle",
@@ -29,5 +37,5 @@ $('#registerButton').click(function() {
 
 $('#loginButton').click(function() {
   //Login to account
-  window.location.href = "nearby.html";
+  event.preventDefault();
 });
