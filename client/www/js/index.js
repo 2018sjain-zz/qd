@@ -3,22 +3,18 @@ function onLoad() {
 }
 
 function goToVenue() {
-  /*$.ajax({
-      type: 'POST',
-      url: 'https://auth.bazooka69.hasura-app.io/signup',
-      headers: {
-        'Content-Type': 'application/json',
-        'Authorization': 'Bearer vcd0bp4a8s9lqlcppyiokodg9ber69dx'
-      },
-      data: {
-        username: $(".register-form #username").val(),
-        password: $(".register-form #password").val()
-      }
-    }).done(function(data) {
-      console.log(data)
-      transition()
-  });*/
-  window.location = "venue.html";
+  if(hasura.user.token != null)
+  {
+    hasura.auth.logout()
+
+  }
+  hasura.setUsername($(".login-form #username2").val());
+  hasura.auth.login($(".login-form #password2").val(),function onSuccess(){
+    console.log("success!")
+    window.location = "nearby.html";
+  },function onError(error){
+    console.log("error: ",error)
+  });
 
 }
 
@@ -33,28 +29,40 @@ $('.message a').click(function() {
   transition()
 });
 
-$('#registerButton').click(function() {
-  // $.ajax({
-  //   type: 'POST',
-  //   url: 'https://auth.bazooka69.hasura-app.io/signup',
-  //   headers: {
-  //     'Content-Type': 'application/json',
-  //     'Authorization': 'Bearer vcd0bp4a8s9lqlcppyiokodg9ber69dx'
-  //   },
-  //   data: {
-  //     username: $(".register-form #username").val(),
-  //     password: $(".register-form #password").val()
-  //   }
-  // }).done(function(data) {
-  //   console.log(data)
-  //   transition()
-  // });
-  hasura.user
-  hasura.setUsername($(".register-form #username").val());
-  hasura.auth.login($(".register-form #password").val(), onSuccess, onError);
-  hasura.user
-  console.log(hasura.user)
-  transition()
+$('#registerButton').click(function(e) {
+  e.preventDefault();
+  event.preventDefault();
+  function register() {
+    hasura.setUsername($(".register-form #username").val());
+    hasura.auth.signup(
+      $(".register-form #password").val(),
+      function onSuccess() {
+        console.log("success!")
+        hasura.user
+        console.log(hasura.user)
+        document.cookie = "username=" + hasura.user.username + ";id=" +  hasura.user.id + ";token=" + hasura.user.token;
+        transition()
+
+        hasura.data.query({
+          type: 'insert',
+          args: {
+            "table": 'qd_users',
+            "objects": [
+              {"hasura_id":hasura.user.id, "username":hasura.user.username}
+            ]
+          }},
+          (data) => { console.log(data);     window.location = "nearby.html"},
+          (error) => { console.log(error);
+        });
+    });
+  }
+
+  if (hasura.user.token) {
+    hasura.auth.logout(register);
+  } else {
+    register();
+  }
+
 });
 
 $('#loginButton').click(function() {
