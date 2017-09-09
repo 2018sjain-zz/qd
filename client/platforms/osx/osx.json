@@ -9,8 +9,20 @@
     "installed_plugins": {
         "cordova-plugin-whitelist": {
             "PACKAGE_NAME": "io.cordova.hellocordova"
+        },
+        "cordova-plugin-qrscanner": {
+            "PACKAGE_NAME": "io.cordova.hellocordova"
         }
     },
     "dependent_plugins": {},
-    "modules": []
+    "modules": [
+        {
+            "file": "plugins/cordova-plugin-qrscanner/www/www.min.js",
+            "id": "cordova-plugin-qrscanner.QRScanner",
+            "pluginId": "cordova-plugin-qrscanner",
+            "clobbers": [
+                "QRScanner"
+            ]
+        }
+    ]
 }
