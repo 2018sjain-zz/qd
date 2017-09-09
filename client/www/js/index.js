@@ -3,7 +3,23 @@ function onLoad() {
 }
 
 function goToVenue() {
+  /*$.ajax({
+      type: 'POST',
+      url: 'https://auth.bazooka69.hasura-app.io/signup',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer vcd0bp4a8s9lqlcppyiokodg9ber69dx'
+      },
+      data: {
+        username: $(".register-form #username").val(),
+        password: $(".register-form #password").val()
+      }
+    }).done(function(data) {
+      console.log(data)
+      transition()
+  });*/
   window.location = "venue.html";
+
 }
 
 function transition() {
@@ -36,6 +52,5 @@ $('#registerButton').click(function() {
 });
 
 $('#loginButton').click(function() {
-  //Login to account
   event.preventDefault();
 });
