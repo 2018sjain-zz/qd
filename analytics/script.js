@@ -16,7 +16,8 @@ users = $.ajax({
     headers: {
         'Authorization': 'Bearer tjh8q9rqysdj6qdguklpg57i98sqe26e',
         'Content-Type': 'application/json'
-    }
+    },
+    async: false
 }).done(function(data) {
     // var goal;
     // for (var x = 0; x < data.length; x++){
@@ -29,6 +30,9 @@ users = $.ajax({
     // data = data[x].venue.queue;
 
     for (var x = 0; x < data.length; x++) {
+        if (data[x].venue_id != user_venue_id){
+            continue;
+        }
         var time = data[x].enter_time;
         time = time.substring(time.indexOf("T") + 1, time.indexOf(":"));
         temp = parseInt(time) - 8;
@@ -92,6 +96,7 @@ users = $.ajax({
             "fillAlphas": 0.8,
             "lineAlpha": 0.2,
             "type": "column",
+            "fillColors":"#8A2BE2",
             "valueField": "visits"
         }],
         "chartCursor": {
@@ -128,6 +133,7 @@ var chart = AmCharts.makeChart("chartdiv2", {
         "id": "g1",
         "fillAlphas": 0.4,
         "valueField": "visits",
+        "fillColors":"#8A2BE2",
         "balloonText": "<div style='margin:5px; font-size:19px;'>Visits:<b>[[value]]</b></div>"
     }],
     "chartScrollbar": {
@@ -195,3 +201,25 @@ function generateChartData() {
     }
     return chartData;
 }
+
+var charter = AmCharts.makeChart( "chartdiv3", {
+  "type": "pie",
+  "theme": "light",
+  "dataProvider": [ {
+    "title": "New",
+    "value": 4852
+  }, {
+    "title": "Returning",
+    "value": 9899
+  } ],
+  "titleField": "title",
+  "valueField": "value",
+  "labelRadius": 5,
+
+  "radius": "42%",
+  "innerRadius": "60%",
+  "labelText": "[[title]]",
+  "export": {
+    "enabled": true
+  }
+} );
