@@ -13,25 +13,45 @@
 
   <body>
     <script type="text/javascript">
-        hasura.setProject('bazooka69');
+      hasura.setProject('bazooka69');
     </script>
+
+    <div class="host">
+      <div class="navigation-bar navigation-bar--material">
+        <div class="navigation-bar__center navigation-bar--material__center" id="title">
+          PennApps' Q
+        </div>
+      </div>
+
+      <div class="curUser">
+        <h1 id="username"></h1>
+        <h2 id="userID"></h2>
+      </div>
+
+      <button type="button" id="verify">Verify</button>
+    </div>
+
+    <div class="inQ">
+      <h2 id="status">Current Status: </h2>
+      <p id="userID"></p>
+    </div>
+
+    <div class="normalUser">
+      <h2 class="warning">Oops! It looks like you are not currently affiliated with any Q, but you can search for or host one!</h3>
+      <div class="arrow animated bounce" id="arrow-1">
+          <p><b>Search</b></p>
+        <img width="60" height="60" alt="Down Arrow" src="img/arrow-down.png" />
+      </div>
+      <div class="arrow animated bounce" id="arrow-2">
+          <p><b>Host</b></p>
+        <img width="60" height="60" alt="Down Arrow" src="img/arrow-down.png" />
+      </div>
+    </div>
+
     <script type="text/javascript">
-    if(hasura.)
-
-    uID = hasura.auth.
+      uID = hasura.user.id
+      $('#userID').text(uID.toString())
     </script>
-
-    <div class="">
-
-    </div>
-
-    <div class="">
-
-    </div>
-
-    <div class="">
-
-    </div>
 
     <!-- Prerequisite=This example use ionicons(http://ionicons.com) to display icons. -->
     <div class="tab-bar">

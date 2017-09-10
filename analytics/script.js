@@ -173,10 +173,11 @@ function zoomChart() {
     chart.zoomToIndexes(chartData.length - 250, chartData.length - 100);
 }
 
-var avg_sum = 0;
+var avg_sum;
 
 // generate some random data, quite different range
 function generateChartData() {
+    avg_sum = 0;
     var chartData = [];
     // current date
     var firstDate = new Date();
@@ -203,8 +204,6 @@ function generateChartData() {
         });
     }
     avg_sum = avg_sum/thingy;
-    return chartData;
-    console.log(avg_sum);
     $('#avgWait').text("Total Average Wait Time: " + avg_sum.toString() + " minutes")
+    return chartData;
 }
-
