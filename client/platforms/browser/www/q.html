@@ -24,15 +24,14 @@
       </div>
 
       <div class="curUser">
-        <h1 id="username"></h1>
-        <h2 id="userID"></h2>
+        <h1 id="username">saarthak24</h1>
+        <h2 id="userID">56</h2>
+        <button type="button" id="verify" onclick="processUser()">Verify</button>
       </div>
-
-      <button type="button" id="verify">Verify</button>
     </div>
 
     <div class="inQ">
-      <h2 id="status">Current Status: </h2>
+      <h2 id="status">Current Status: In Line<span id="status"></span></h2>
       <p id="userID"></p>
     </div>
 
@@ -48,43 +47,43 @@
       </div>
     </div>
 
-    <!-- Prerequisite=This example use ionicons(http://ionicons.com) to display icons. -->
-    <div class="tab-bar">
-      <label class="tab-bar__item">
-        <input type="radio" name="tab-bar-b">
-        <button class="tab-bar__button">
-          <i class="tab-bar__icon ion-navigate"></i>
-        </button>
-        </label>
+        <!-- Prerequisite=This example use ionicons(http://ionicons.com) to display icons. -->
+        <div class="tab-bar">
+          <label class="tab-bar__item">
+    <input type="radio" name="tab-bar-b" checked="checked" ontouchend="goToNearby()">
+    <button class="tab-bar__button" id="mb1" id="nearbyButton" ontouchend="goToNearby()">
+      <i class="tab-bar__icon ion-navigate"></i>
+    </button>
+    </label>
 
-      <label class="tab-bar__item">
-        <input type="radio" name="tab-bar-b">
-        <button class="tab-bar__button">
-          <i class="tab-bar__icon ion-search"></i>
-        </button>
-        </label>
+          <label class="tab-bar__item">
+    <input type="radio" name="tab-bar-b" ontouchend="goToSearch()">
+    <button class="tab-bar__button" id="mb2" ontouchend="goToSearch()">
+      <i class="tab-bar__icon ion-search"></i>
+    </button>
+    </label>
 
-      <label class="tab-bar__item">
-        <input type="radio" name="tab-bar-b" checked="checked">
-        <button class="tab-bar__button">
-           <b>Q</b>
-        </button>
-        </label>
+          <label class="tab-bar__item">
+    <input type="radio" name="tab-bar-b" checked="checked" ontouchend="goToQ()">
+    <button class="tab-bar__button" id="mb3" ontouchend="goToQ()">
+      <b>Q</b>
+    </button>
+    </label>
 
-      <label class="tab-bar__item">
-        <input type="radio" name="tab-bar-b">
-        <button class="tab-bar__button">
-          <i class="tab-bar__icon ion-compose"></i>
-        </button>
-        </label>
+          <label class="tab-bar__item">
+    <input type="radio" name="tab-bar-b" ontouchend="goToVenue()">
+    <button class="tab-bar__button" id="mb4" ontouchend="goToVenue()">
+      <i class="tab-bar__icon ion-compose"></i>
+    </button>
+    </label>
 
-      <label class="tab-bar__item">
-        <input type="radio" name="tab-bar-b">
-        <button class="tab-bar__button">
-          <i class="tab-bar__icon ion-android-person"></i>
-        </button>
-        </label>
-    </div>
+          <label class="tab-bar__item">
+    <input type="radio" name="tab-bar-b" ontouchend="goToProfile()">
+    <button class="tab-bar__button" id="mb5" ontouchend="goToProfile()">
+      <i class="tab-bar__icon ion-android-person"></i>
+    </button>
+    </label>
+        </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script type="text/javascript" src="cordova.js"></script>

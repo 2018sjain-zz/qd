@@ -24,44 +24,43 @@
       </form>
     </div>
 
-    <!-- Prerequisite=This example use ionicons(http://ionicons.com) to display icons. -->
-    <div class="tab-bar">
-      <label class="tab-bar__item">
-    <input type="radio" name="tab-bar-b">
-    <button class="tab-bar__button">
+        <!-- Prerequisite=This example use ionicons(http://ionicons.com) to display icons. -->
+        <div class="tab-bar">
+          <label class="tab-bar__item">
+    <input type="radio" name="tab-bar-b" ontouchend="goToNearby()">
+    <button class="tab-bar__button" id="mb1" id="nearbyButton" ontouchend="goToNearby()">
       <i class="tab-bar__icon ion-navigate"></i>
     </button>
-  </label>
+    </label>
 
-      <label class="tab-bar__item">
-    <input type="radio" name="tab-bar-b">
-    <button class="tab-bar__button">
+          <label class="tab-bar__item">
+    <input type="radio" name="tab-bar-b" ontouchend="goToSearch()">
+    <button class="tab-bar__button" id="mb2" ontouchend="goToSearch()">
       <i class="tab-bar__icon ion-search"></i>
     </button>
-  </label>
+    </label>
 
-      <label class="tab-bar__item">
-    <input type="radio" name="tab-bar-b">
-    <button class="tab-bar__button">
+          <label class="tab-bar__item">
+    <input type="radio" name="tab-bar-b" ontouchend="goToQ()">
+    <button class="tab-bar__button" id="mb3" ontouchend="goToQ()">
       <b>Q</b>
     </button>
-  </label>
+    </label>
 
-      <label class="tab-bar__item">
-    <input type="radio" name="tab-bar-b" checked="checked">
-    <button class="tab-bar__button">
+          <label class="tab-bar__item">
+    <input type="radio" name="tab-bar-b" checked="checked" ontouchend="goToVenue()">
+    <button class="tab-bar__button" id="mb4" ontouchend="goToVenue()">
       <i class="tab-bar__icon ion-compose"></i>
     </button>
-  </label>
+    </label>
 
-      <label class="tab-bar__item">
-    <input type="radio" name="tab-bar-b">
-    <button class="tab-bar__button">
+          <label class="tab-bar__item">
+    <input type="radio" name="tab-bar-b" ontouchend="goToProfile()">
+    <button class="tab-bar__button" id="mb5" ontouchend="goToProfile()">
       <i class="tab-bar__icon ion-android-person"></i>
     </button>
-  </label>
-
-    </div>
+    </label>
+        </div>
   </body>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
