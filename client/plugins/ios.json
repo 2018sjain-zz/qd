@@ -7,13 +7,13 @@
         "files": {}
     },
     "installed_plugins": {
+        "cordova-plugin-browsersync": {
+            "PACKAGE_NAME": "io.cordova.hellocordova"
+        },
         "cordova-plugin-qrscanner": {
             "PACKAGE_NAME": "io.cordova.hellocordova"
         },
         "cordova-plugin-whitelist": {
-            "PACKAGE_NAME": "io.cordova.hellocordova"
-        },
-        "cordova-plugin-browsersync": {
             "PACKAGE_NAME": "io.cordova.hellocordova"
         }
     },
@@ -22,6 +22,15 @@
             "PACKAGE_NAME": "io.cordova.hellocordova"
         },
         "cordova-plugin-swift-support": {
+            "PACKAGE_NAME": "io.cordova.hellocordova"
+        },
+        "org.apache.cordova.dialogs": {
+            "PACKAGE_NAME": "io.cordova.hellocordova"
+        },
+        "org.apache.cordova.inappbrowser": {
+            "PACKAGE_NAME": "io.cordova.hellocordova"
+        },
+        "phonegap-plugin-barcodescanner": {
             "PACKAGE_NAME": "io.cordova.hellocordova"
         }
     }

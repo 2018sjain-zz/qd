@@ -1,6 +1,9 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:300);
 
-.list_container {
-  align-items: center;
 
+.list_box {
+  background-color: #eee;
+  text-align: center;
+  height: 130px;
+  padding: 1px 0 0 0;
 }

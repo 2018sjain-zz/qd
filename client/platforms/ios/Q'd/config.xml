@@ -18,6 +18,15 @@
     <feature name="QRScanner">
         <param name="ios-package" value="QRScanner" />
     </feature>
+    <feature name="Notification">
+        <param name="ios-package" value="CDVNotification" />
+    </feature>
+    <feature name="InAppBrowser">
+        <param name="ios-package" value="CDVInAppBrowser" />
+    </feature>
+    <feature name="BarcodeScanner">
+        <param name="ios-package" value="CDVBarcodeScanner" />
+    </feature>
     <name>Q'd</name>
     <description>
         Digitized lines with venue data analytics.
