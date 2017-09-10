@@ -1,3 +1,4 @@
+venue_json = {}
 function get_venues(){
     hasura.data.query({
     type: 'select',
@@ -9,7 +10,7 @@ function get_venues(){
       venue_json = data
       for(var i = 0;i<venue_json.length;i++)
       {
-        $("#fillin_venue").append("<li class=\"list-item list-item--tappable\" ><div class=\"list-item__center\">" + venue_json[i].venue_name + "</div><div class=\"list-item__right\"><div class=\"list-item__label\">" + venue_json[i].vicinity + " mile(s) away</div></div>  </li>")
+        $("#fillin_venue").append("<li class=\"list-item list-item--tappable\" ><div class=\"list-item__center\">" + venue_json[i].venue_name + "</div><div class=\"list-item__right\"><div class=\"list-item__label\">" + venue_json[i].vicinity + " mile(s) away</div></div></li>")
       }
       return data
     },
@@ -18,10 +19,15 @@ function get_venues(){
     }
   );
 }
-function inject_venues(){
-  x = get_venues();
-  for(var i = 0;i<x.length;i++)
-  {
-      
-  }
+// function inject_venues(){
+//   x = get_venues();
+//   for(var i = 0;i<x.length;i++)
+//   {
+//
+//   }
+// }
+function join_venue(venue_name){
+  hasura.data.query({
+    type: ''
+  })
 }
