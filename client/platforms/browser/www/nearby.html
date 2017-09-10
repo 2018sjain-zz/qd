@@ -19,53 +19,52 @@
 -->
 <html>
 
-    <head>
-        <meta name="format-detection" content="telephone=no">
-        <meta name="msapplication-tap-highlight" content="no">
-        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
-        <link rel="stylesheet" type="text/css" href="css/app.css">
-        <link rel="stylesheet" type="text/css" href="css/nearby.css">
-        <script type="text/javascript" src="js/nearby.js"></script>
-        <title>Nearby Venues</title>
-        <script src="https://github.com/hasura/js-sdk/releases/download/v0.1.3/hasura.min.js"></script>
-        <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsenui.css">
-        <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsen-css-components.min.css">
-        <script src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        <script type="text/javascript" src="cordova.js"></script>
+  <head>
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+    <link rel="stylesheet" type="text/css" href="css/app.css">
+    <link rel="stylesheet" type="text/css" href="css/nearby.css">
+    <script type="text/javascript" src="js/nearby.js"></script>
+    <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <title>Nearby Venues</title>
+    <script src="https://github.com/hasura/js-sdk/releases/download/v0.1.3/hasura.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsenui.css">
+    <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsen-css-components.min.css">
+    <script src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="cordova.js"></script>
 
-        <script>
-            hasura.setProject('bazooka69'); // If your hasura project is hello70.hasura-app.io
-            // if(hasura.user.token == null)
-            // {
-            //   window.location = "index.html"
-            // }
-            var venue_json = get_venues();
-            console.log(venue_json)
-        </script>
-        <script>
-          $(document).ready(function(){
-            for(var i = 0;i<venue_json.length;i++)
-            {
-              $("#fillin_venue").append("<div class=\"list-item__center\">" + venue_json[i].venue_name + "</div><div class=\"list-item__right\"><div class=\"list-item__label\">" + venue_json[i].vicinity + " mile(s) away</div></div>")
-            }
-          });
+    <script>
+      hasura.setProject('bazooka69'); // If your hasura project is hello70.hasura-app.io
+      // if(hasura.user.token == null)
+      // {
+      //   window.location = "index.html"
+      // }
+      var venue_json = get_venues();
+      console.log(venue_json)
+    </script>
+    <script>
+      $(document).ready(function() {
+        for (var i = 0; i < venue_json.length; i++) {
+          $("#fillin_venue").append("<div class=\"list-item__center\">" + venue_json[i].venue_name + "</div><div class=\"list-item__right\"><div class=\"list-item__label\">" + venue_json[i].vicinity + " mile(s) away</div></div>")
+        }
+      });
+    </script>
+  </head>
 
-        </script>
-    </head>
-
-    <body>
+  <body>
 
 
-        <!-- <div class="list_box" style="background-color: #eee; height: 50px; padding: 1px 5 0 0; margin-bottom: 2%">
+    <!-- <div class="list_box" style="background-color: #eee; height: 50px; padding: 1px 5 0 0; margin-bottom: 2%">
         <div class="card">
           <h2 class="card__title">Nearby Venues</h2>
         </div>
       </div> -->
-      <div class="toolbar">
-  <div class="toolbar__center">Nearby Venues</div>
-</div>
-        <!-- <div class="list_container">
+    <div class="toolbar">
+      <div class="toolbar__center">Nearby Venues</div>
+    </div>
+    <!-- <div class="list_container">
 
           <div class="list_box" >
                 <div class="card">
@@ -79,13 +78,13 @@
                 </div>
           </div>
         </div> -->
-      <ul class="list" id="fillin_venue">
+    <ul class="list" id="fillin_venue">
 
 
 
-</ul>
+    </ul>
 
-<!-- <ul class="list">
+    <!-- <ul class="list">
   <li class="list-item list-item--tappable">
     <div class="list-item__center">Tappable Item</div>
   </li>
@@ -96,6 +95,44 @@
     <div class="list-item__center">Tappable Item</div>
   </li>
 </ul> -->
-    </body>
+
+    <!-- Prerequisite=This example use ionicons(http://ionicons.com) to display icons. -->
+    <div class="tab-bar">
+      <label class="tab-bar__item">
+<input type="radio" name="tab-bar-b" checked="checked">
+<button class="tab-bar__button">
+  <i class="tab-bar__icon ion-navigate"></i>
+</button>
+</label>
+
+      <label class="tab-bar__item">
+<input type="radio" name="tab-bar-b">
+<button class="tab-bar__button">
+  <i class="tab-bar__icon ion-search"></i>
+</button>
+</label>
+
+      <label class="tab-bar__item">
+<input type="radio" name="tab-bar-b">
+<button class="tab-bar__button">
+  Q
+</button>
+</label>
+
+      <label class="tab-bar__item">
+<input type="radio" name="tab-bar-b">
+<button class="tab-bar__button">
+  <i class="tab-bar__icon ion-compose"></i>
+</button>
+</label>
+
+      <label class="tab-bar__item">
+<input type="radio" name="tab-bar-b">
+<button class="tab-bar__button">
+  <i class="tab-bar__icon ion-android-person"></i>
+</button>
+</label>
+    </div>
+  </body>
 
 </html>
