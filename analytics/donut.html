@@ -1,0 +1,40 @@
+<!-- Styles -->
+<style>
+#chartdiv3 {
+  width: 100%;
+  height: 500px;
+}
+</style>
+
+<!-- Resources -->
+<script src="https://www.amcharts.com/lib/3/amcharts.js"></script>
+<script src="https://www.amcharts.com/lib/3/pie.js"></script>
+<script src="https://www.amcharts.com/lib/3/plugins/export/export.min.js"></script>
+<link rel="stylesheet" href="https://www.amcharts.com/lib/3/plugins/export/export.css" type="text/css" media="all" />
+<script src="https://www.amcharts.com/lib/3/themes/light.js"></script>
+
+<!-- Chart code -->
+<script>
+var charter = AmCharts.makeChart( "chartdiv3", {
+  "type": "pie",
+  "theme": "light",
+  "dataProvider": [ {
+    "country": "Premium",
+    "litres": 485
+  }, {
+    "country": "Regular",
+    "litres": 989
+  }],
+  "valueField": "litres",
+  "titleField": "country",
+   "balloon":{
+   "fixedPosition":true
+  },
+  "export": {
+    "enabled": true
+  }
+} );
+</script>
+
+<!-- HTML -->
+<div id="chartdiv3"></div>

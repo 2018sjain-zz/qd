@@ -36,10 +36,8 @@ users = $.ajax({
         var time = data[x].enter_time;
         time = time.substring(time.indexOf("T") + 1, time.indexOf(":"));
         temp = parseInt(time) - 8;
-        console.log(temp);
         times[temp] += 1;
     }
-    console.log(times);
 
 
     var chart = AmCharts.makeChart("chartdiv", {
@@ -127,7 +125,7 @@ var chart = AmCharts.makeChart("chartdiv2", {
     "dataProvider": chartData,
     "valueAxes": [{
         "position": "left",
-        "title": "Average # of Visitors"
+        "title": "Average Wait Time"
     }],
     "graphs": [{
         "id": "g1",
@@ -206,19 +204,17 @@ var charter = AmCharts.makeChart( "chartdiv3", {
   "type": "pie",
   "theme": "light",
   "dataProvider": [ {
-    "title": "New",
-    "value": 4852
+    "country": "Premium",
+    "litres": 485
   }, {
-    "title": "Returning",
-    "value": 9899
-  } ],
-  "titleField": "title",
-  "valueField": "value",
-  "labelRadius": 5,
-
-  "radius": "42%",
-  "innerRadius": "60%",
-  "labelText": "[[title]]",
+    "country": "Regular",
+    "litres": 989
+  }],
+  "valueField": "litres",
+  "titleField": "country",
+   "balloon":{
+   "fixedPosition":true
+  },
   "export": {
     "enabled": true
   }
