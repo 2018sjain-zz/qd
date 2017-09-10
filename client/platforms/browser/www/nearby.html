@@ -6,6 +6,8 @@
     <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
     <link rel="stylesheet" type="text/css" href="css/app.css">
     <link rel="stylesheet" type="text/css" href="css/nearby.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
     <script type="text/javascript" src="js/nearby.js"></script>
     <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
     <title>Nearby Venues</title>
@@ -13,7 +15,6 @@
     <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsenui.css">
     <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsen-css-components.min.css">
     <script src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script type="text/javascript" src="cordova.js"></script>
 
     <script>
@@ -36,12 +37,6 @@
 
   <body>
 
-
-    <!-- <div class="list_box" style="background-color: #eee; height: 50px; padding: 1px 5 0 0; margin-bottom: 2%">
-        <div class="card">
-          <h2 class="card__title">Nearby Venues</h2>
-        </div>
-      </div> -->
     <div class="toolbar">
       <div class="toolbar__center">Nearby Venues</div>
     </div>
@@ -81,7 +76,7 @@
     <div class="tab-bar">
       <label class="tab-bar__item">
 <input type="radio" name="tab-bar-b" checked="checked">
-<button class="tab-bar__button" id="mb1" onclick="goToNearby()">
+<button class="tab-bar__button" id="mb1" id="nearbyButton" onclick="goToNearby()">
   <i class="tab-bar__icon ion-navigate"></i>
 </button>
 </label>
@@ -96,7 +91,7 @@
       <label class="tab-bar__item">
 <input type="radio" name="tab-bar-b">
 <button class="tab-bar__button" id="mb3" onclick="goToQ()">
-  Q
+  <b>Q</b>
 </button>
 </label>
 
