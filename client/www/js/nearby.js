@@ -19,7 +19,7 @@ function get_venues(){
   );
 }
 function inject_venues(){
-  x = get_venues()
+  x = get_venues();
   for(var i = 0;i<x.length;i++)
   {
 
