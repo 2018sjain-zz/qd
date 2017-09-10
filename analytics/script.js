@@ -118,6 +118,7 @@ users = $.ajax({
 
 var chartData = generateChartData();
 
+
 var chart = AmCharts.makeChart("chartdiv2", {
     "type": "serial",
     "theme": "light",
@@ -132,7 +133,7 @@ var chart = AmCharts.makeChart("chartdiv2", {
         "fillAlphas": 0.4,
         "valueField": "visits",
         "fillColors":"#8A2BE2",
-        "balloonText": "<div style='margin:5px; font-size:19px;'>Visits:<b>[[value]]</b></div>"
+        "balloonText": "<div style='margin:5px; font-size:14px;'>Average Wait Time:<b>[[value]]</b> minutes</div>"
     }],
     "chartScrollbar": {
         "graph": "g1",
@@ -172,6 +173,8 @@ function zoomChart() {
     chart.zoomToIndexes(chartData.length - 250, chartData.length - 100);
 }
 
+var avg_sum = 0;
+
 // generate some random data, quite different range
 function generateChartData() {
     var chartData = [];
@@ -181,41 +184,27 @@ function generateChartData() {
     firstDate.setHours(firstDate.getDate() - 1000);
 
     // and generate 500 data items
-    var visits = 5;
-    for (var i = 0; i < 25; i++) {
+    var visits = 10;
+    var thingy = 13;
+    for (var i = 0; i < thingy; i++) {
         var newDate = new Date(firstDate);
         // each time we add one minute
         newDate.setHours(newDate.getHours() + i);
         // some random number
-        visits += Math.round((Math.random() < 0.5 ? 1 : -1) * Math.random() * 10);
+        visits += Math.round((Math.random() < 0.5 ? 1 : -1) * Math.random() * 5);
         if (visits < 0) {
             visits *= -1;
         }
+        avg_sum += visits;
         // add data item to the array
         chartData.push({
             date: newDate,
             visits: visits
         });
     }
+    avg_sum = avg_sum/thingy;
     return chartData;
+    console.log(avg_sum);
+    $('#avgWait').text("Total Average Wait Time: " + avg_sum.toString() + " minutes")
 }
 
-var charter = AmCharts.makeChart( "chartdiv3", {
-  "type": "pie",
-  "theme": "light",
-  "dataProvider": [ {
-    "country": "Premium",
-    "litres": 485
-  }, {
-    "country": "Regular",
-    "litres": 989
-  }],
-  "valueField": "litres",
-  "titleField": "country",
-   "balloon":{
-   "fixedPosition":true
-  },
-  "export": {
-    "enabled": true
-  }
-} );
