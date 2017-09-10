@@ -4,6 +4,7 @@ var isUserInQ = true
 var queue_size = 0
 var user_place = 0
 var size_and_place = {}
+var user_ven_id = 0
 function getPlace(){
     hasura.data.query({
     type: 'select',
@@ -40,7 +41,7 @@ function userInQ(){
     }
     else {
       data[0]["position"]
-      var user_ven_id = data[0]["venue_id"]
+      user_ven_id = data[0]["venue_id"]
       hasura.data.query({
       type: 'select',
       args: {
@@ -61,4 +62,36 @@ function userInQ(){
   },
   (error) => { console.log(error); }
 );
+}
+
+function deleteUser()
+{
+  hasura.data.query({
+    args:{
+    table:"user_queue_postion",
+    columns: [
+      "user_id"
+    ],
+    where: {"position":1,"venue_id":user_ven_id}
+  },
+  "type": "select"
+},(data)=> {
+  userid_dropped = data[0]["user_id"]
+
+  hasura.data.query({
+  type: 'delete',
+  args: {
+    table: 'venue_queue_user',
+    columns: ['*'],
+    where: {"user_id":userid_dropped,"venue_id":user_ven_id}
+  }},
+  (data) => { console.log(data);
+  },
+  (error) => { console.log(error); }
+);
+
+
+
+
+})
 }
