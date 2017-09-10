@@ -6,7 +6,6 @@ function goToVenue() {
   if(hasura.user.token != null)
   {
     hasura.auth.logout()
-
   }
   hasura.setUsername($(".login-form #username2").val());
   hasura.auth.login($(".login-form #password2").val(),function onSuccess(){
