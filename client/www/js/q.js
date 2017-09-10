@@ -18,14 +18,13 @@ function getPlace(){
   );
 }
 
-function isHost(){
+function isHostFunction(){
   if(hasura.user.roles.length > 0)
   {
     isHost = true
   }
-
-
 }
+
 function userInQ(){
   hasura.data.query({
   type: 'select',
@@ -63,4 +62,3 @@ function userInQ(){
   (error) => { console.log(error); }
 );
 }
-function usersInClue

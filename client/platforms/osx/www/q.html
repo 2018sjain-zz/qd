@@ -48,11 +48,6 @@
       </div>
     </div>
 
-    <script type="text/javascript">
-      uID = hasura.user.id
-      $('#userID').text(uID.toString())
-    </script>
-
     <!-- Prerequisite=This example use ionicons(http://ionicons.com) to display icons. -->
     <div class="tab-bar">
       <label class="tab-bar__item">
@@ -95,6 +90,27 @@
     <script type="text/javascript" src="cordova.js"></script>
     <script type="text/javascript" src="js/main.js"></script>
     <script type="text/javascript" src="js/q.js"></script>
+    <script type="text/javascript">
+      isHostFunction()
+      userInQ()
+      if(isHost == true) {
+          $('.host').css("display","block")
+          $('.inQ').css("display","none")
+          $('.normalUser').css("display","none")
+      }
+      else if(isUserInQ == true) {
+          $('.host').css("display","none")
+          $('.inQ').css("display","block")
+          $('.normalUser').css("display","none")
+      }
+      else {
+          $('.host').css("display","none")
+          $('.inQ').css("display","none")
+          $('.normalUser').css("display","block")
+      }
+      uID = hasura.user.id
+      $('#userID').text(uID.toString())
+    </script>
   </body>
 
 </html>
